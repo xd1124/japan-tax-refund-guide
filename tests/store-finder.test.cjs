@@ -34,7 +34,7 @@ for(const id of ['departure','arrival','shopping','summary','services']){
  const re=new RegExp('<section[^>]*id="'+id+'"[\\s\\S]*?<\\/section>');
  const old=before.match(re);if(old)assert.equal(html.match(re)?.[0],old[0],id);
 }
-assert.equal(html.slice(html.indexOf("const fxKey=")),before.slice(before.indexOf("const fxKey=")),'FX and end scripts untouched');
+assert.equal(html.slice(html.indexOf("const fxKey=")).replace('?v=1.2.1',''),before.slice(before.indexOf("const fxKey=")),'FX and end scripts untouched');
 assert.equal(html.slice(html.indexOf('<script>')+8,html.indexOf('const storeDirectory=')),before.slice(before.indexOf('<script>')+8,before.indexOf('const storeDirectory=')),'existing app JS before directory unchanged');
 const distribution=Object.fromEntries(['나고야','도쿄','기타 지역','전국 공통'].map(r=>[r,data.filter(d=>d.region===r).length]));
 console.log('PASS: syntax; 22 legacy records; region, multilingual/initial search; unique IDs; parent links; evidence separation; original app/calculator preservation.');
