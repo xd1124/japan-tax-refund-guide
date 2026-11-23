@@ -1,0 +1,6 @@
+.important-emphasis,.airport-before-baggage{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+.logo-home{display:inline-flex;align-items:center;gap:12px;border:0;padding:0;background:none;color:inherit;font:inherit;font-weight:800;text-align:left;min-height:44px}
+.logo-home:focus-visible,.page-actions button:focus-visible,.store-expand:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.page-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}.page-actions .back{margin:0;min-height:44px}.page-actions .step-next{background:var(--tint)}
+.checklist-shortcut-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.checklist-shortcut-head>div{flex:1;min-width:180px}.checklist-shortcut h3{margin:0}.checklist-shortcut p{margin:4px 0 0}.checklist-shortcut .progress{margin:16px 0}.checklist-shortcut button,.store-expand{min-height:44px}.store-expand{margin-top:14px}
+@media(max-width:570px){.logo-home{gap:8px}.page-actions{flex-direction:column}.page-actions .back{width:100%;text-align:center}.checklist-shortcut-head{gap:10px}.checklist-shortcut-head>div{min-width:140px}.checklist-shortcut-head>b{margin-left:auto}.store-expand{width:100%}}

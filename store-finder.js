@@ -41,18 +41,6 @@ function appendStoreDetails(main,d) {
   const meta=document.createElement('p');meta.className='store-item-detail';
   meta.textContent=[d.region,d.scope==='chain'?'체인 공통':d.scope==='facility'?'쇼핑시설':'개별 지점',labels[d.taxFreeAvailability]||labels.unknown].join(' · ');
   main.prepend(meta);
-  const details=document.createElement('details');details.className='store-more';
-  const summary=document.createElement('summary');summary.textContent='면세 수속 · 출처 상세';details.append(summary);
-  const dl=document.createElement('dl');
-  const add=(label,value)=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value||'확인되지 않음';dl.append(dt,dd)};
-  add('일본어 상호',d.ja);if(d.address)add('주소',d.address);
-  add('카운터·접수 시간',d.taxFreeCounter);add('구매 당일 수속',d.taxFreeProcedure);
-  add('환급 방식',d.refundMethods?.join(' / '));
-  add('수수료',d.refundFee?d.refundFee+' · 기준: '+d.refundFeeBasis:null);
-  add('자료 확인일',d.verifiedAt?d.verifiedAt+' (자료 검토일 · 현장 확인일 아님)':'기존 자료 · 정확한 확인일 미기록');
-  add('여행자 후기',d.level==='reported'?'기존 여행자 제보 보존 · 정확한 경험 날짜·지점·후기 원문은 확인 필요. 공식 정책이 아닌 개인 경험입니다.':'이 지점에 연결할 수 있는 검증된 신규 후기가 없습니다.');
-  details.append(dl);
-  (d.sources||[]).forEach(s=>{const p=document.createElement('p'),a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.label+' ↗';p.append(a,document.createTextNode(' · '+s.scope));details.append(p)});
-  const caution=document.createElement('p');caution.textContent=d.scope==='chain'?'체인 공통 안내는 모든 지점에 적용되지 않습니다.':'면세 취급 확인은 환급업체 확인과 별개입니다. 방문 전 최신 영업시간·수속 조건을 확인하세요.';details.append(caution);
-  main.append(details);
+  const links=main.querySelector('.store-result-links');
+  (d.sources||[]).filter(s=>s.url!==d.source).forEach(s=>{const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.label+' ↗';links.append(a)});
 }

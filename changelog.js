@@ -1,5 +1,6 @@
 // User-facing releases only. Update CHANGELOG.md with this array. Newest first.
 const changelogEntries = [
+  {"date":"2026.11.24","version":"v1.3","summary":["주요 안내 문구 가독성 개선, 단계별 이동 버튼 추가, 체크리스트 접근성 향상 및 매장 검색 미리보기 최적화"]},
   {date:"2026.11.24",version:"v1.2",summary:["Store Finder에 도쿄·나고야와 지역 필터를 추가했습니다.","지점별 면세 취급·환급업체·수속·출처를 구분해 확인할 수 있습니다."]},
   {
     "date": "2026.11.23",
