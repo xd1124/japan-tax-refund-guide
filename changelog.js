@@ -2,15 +2,7 @@
 const changelogEntries = [
   {
     "date": "2026.11.23",
-    "version": "v1.0",
-    "summary": [
-      "업데이트 내역을 제목 옆에서 확인할 수 있습니다.",
-      "이번 업데이트부터 사용자용 버전 번호를 관리합니다."
-    ]
-  },
-  {
-    "date": "2026.11.23",
-    "version": null,
+    "version": "v1.1",
     "commit": "2ad358f822429a5247bf445c18cbab11aaf23ce3",
     "summary": [
       "계산기에 JPY/KRW 최신 공시 환율과 예상 원화 환급액을 추가했습니다.",
@@ -18,20 +10,11 @@ const changelogEntries = [
     ]
   },
   {
-    "date": "2026.11.22",
-    "version": null,
-    "commit": "68ce5e965eda4ef5c98feb63e4fe55880453cbf0",
+    "date": "2026.11.23",
+    "version": "v1.0",
     "summary": [
-      "상단 FAQ 앞에 계산기 메뉴를 추가해 계산 화면으로 바로 이동할 수 있습니다."
-    ]
-  },
-  {
-    "date": "2026.11.22",
-    "version": null,
-    "commit": "0c600cb935e14ef3fa1d573c288072fa9239484a",
-    "summary": [
-      "일본 세금환급 가이드를 GitHub Pages에 처음 공개했습니다.",
-      "여행 단계별 안내, Store Finder, 환급 계산기, 체크리스트와 업체 정보를 제공합니다."
+      "업데이트 내역을 제목 옆에서 확인할 수 있습니다.",
+      "이번 업데이트부터 사용자용 버전 번호를 관리합니다."
     ]
   }
 ];
