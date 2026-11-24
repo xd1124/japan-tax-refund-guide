@@ -59,3 +59,50 @@
 ## 검사
 
 `node tests/store-finder.test.cjs`: 구문, 원본 22개 보존, 한국어/일본어/영어/초성 검색, 지역 필터, 중복 ID, 상위 시설 연결, 미확인 상태, 수수료 기준, 기존 앱·환율 코드 보존을 검사합니다. URL 문법 검사는 링크의 가용성 보장이 아닙니다. 화면·모바일 동작은 별도 브라우저 검사 대상입니다.
+
+
+## DAISO·Seria 지점 확장 — 2026.11.24
+
+이번 추가 22지점(DAISO 16, Seria 6), 나고야 10(DAISO 6, Seria 4). 기존 58항목을 보존해 총 80항목입니다.
+추가분 면세 가능 공식 확인 0, 면세 대상 아님 공식 확인 2, 미확인 20. 환급업체 미확인 20, 해당 없음 2. 체인 전체로 일반화하지 않습니다.
+
+`not-eligible`은 공식 면세 제외, `unknown`은 면세 여부 미확인입니다. 기존 `official`, `tenant`, `branch-check`의 의미는 보존했습니다. `refundProviderStatus: not-applicable`은 공식 제외 지점에만 사용합니다. 층수·주소 미확인은 null입니다. DAISO 계열의 Standard Products·THREEPPY 정보는 복사하지 않았습니다.
+
+### 지점별 출처
+
+| 지점 | 지역 | 층 | 면세 상태 | 공식 자료 |
+|---|---|---|---|---|
+| 다이소 나고야 사카에 스카일점 | 나고야 | 7F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/007352) |
+| 다이소 나고야 이마이케점 | 나고야 | 미확인 | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/007231) |
+| 다이소 나고야 호리타점 | 나고야 | 미확인 | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/005589) |
+| 다이소 나고야 나루파크점 | 나고야 | 2F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/003097) |
+| 다이소 샴피아포트 나고야 다카쓰지점 | 나고야 | 미확인 | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/007339) |
+| 다이소 나고야 오스점 | 나고야 | 1F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/009076) |
+| 다이소 시부야 마크시티점 | 도쿄 | 1F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/003086) · [브랜드 안내](https://www.s-markcity.co.jp/shop-restaurant/w-1-4-1/) |
+| 다이소 시부야 센터가이점 | 도쿄 | 미확인 | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/008931) |
+| 다이소 하라주쿠점 | 도쿄 | 2F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/007157) |
+| 다이소 난바 워크점 | 오사카 | 미확인 | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/002627) · [브랜드 안내](https://walk.osaka-chikagai.jp/index.php/shopguide/586) |
+| 다이소 신사이바시점 | 오사카 | 3F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/008646) |
+| 다이소 구로몬시장점 | 오사카 | 1F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/005312) |
+| 다이소 이온몰 교토점 | 기타 지역 | 4F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/008286) |
+| 다이소 하카타 버스터미널점 | 기타 지역 | 5F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/001516) · [브랜드 안내](https://www.h-bt.jp/floor/shop31.html) |
+| 다이소 삿포로 다누키코지 2초메점 | 기타 지역 | 6F | 미확인 | [공식 지점 안내](https://www.daiso-sangyo.co.jp/shop/detail/002210) |
+| 세리아 시미즈야 후지가오카점 | 나고야 | 4F | 미확인 | [공식 지점 안내](https://www.shimizuya.co.jp/store/p871/) · [브랜드 안내](https://shop.seria-group.com/seria/info/000002229) |
+| 세리아 오스점 | 나고야 | 미확인 | 미확인 | [공식 지점 안내](https://www.kinsyachi.com/shop/seriaosuten/) |
+| 세리아 아스날 가나야마점 | 나고야 | 3F | 미확인 | [공식 지점 안내](https://www.asunal.jp/shopguide/detail/?cd=000050) · [브랜드 안내](https://www.asunal.jp/news/) |
+| 세리아 빅카메라 나고야역 서쪽점 | 나고야 | 5F | 미확인 | [공식 지점 안내](https://www.biccamera.com/bc/i/shop/shoplist/shop033.jsp) |
+| 세리아 키테라타운 후쿠오카 나가하마점 | 기타 지역 | 3F | 미확인 | [공식 지점 안내](https://fukuoka-nagahama.kiteratown.jp/tenpo/seria/) · [브랜드 안내](https://shop.seria-group.com/seria/info/000002463) |
+| 다이소 마로니에 게이트 긴자점 | 도쿄 | 마로니에 게이트 긴자 2 · 6F | 대상 아님 · 공식 확인 | [공식 지점 안내](https://www.marronniergate.com/shop/index/304) |
+| 세리아 이케부쿠로 P’PARCO점 | 도쿄 | P’PARCO 5F | 대상 아님 · 공식 확인 | [공식 지점 안내](https://ikebukuro.parco.jp/shop/detail/?cd=027190) |
+
+긴자 DAISO와 이케부쿠로 Seria는 각각 시설 공식 페이지의 ‘免税 対象外’를 확인했습니다. 다른 20곳은 공식 지점·시설·상점가 안내로 존재를 확인했으나 면세 여부와 환급업체를 확정할 자료는 찾지 못했습니다. 빅카메라의 면세 표시는 입점 Seria에 적용하지 않습니다. 검색 색인 및 열람 가능한 공식 본문을 검토했으며 캐시된 자료도 포함되어 현장 영업·접수 상황을 보장하지 않습니다.
+
+### 2026.11.1 이후 여행자 후기 조사
+
+검증 가능한 DAISO·Seria 구매·환급 경험 0건, 환급 완료 사례 0건. 브랜드·지점·구매일·공항·업체·완료 증빙·작성일·원문 URL을 갖춘 후기를 확인하지 못해 데이터 배열은 비워 두었습니다. ‘없음’이 아닌 이번 검색 범위 내 미검증입니다.
+
+- 한국: 네이버 블로그/카페 대상 검색 및 일반 검색. 해당 도메인은 robots 제한으로 원문 검증 불가.
+- 일본: X, note, Yahoo!知恵袋 대상 DAISO·Seria/免税/リファンド/2026.11 검색. 조건에 맞는 지점별 실제 환급 후기를 검증하지 못함.
+- 해외: Reddit JapanTravelTips 및 일반 검색. [Seria 방문 글](https://www.reddit.com/r/TabiJapan/comments/1w84nei/this_sub_told_me_to_check_out_seria_i_finally_did/)은 제도 시행 전 글이므로 제외.
+- [100엔숍 비교 안내](https://imaginarithink.com/entry/일본-100엔숍-비교-다이소-세리아-캔두-3코인즈)는 정보 안내 글로 실제 환급 후기에 포함하지 않음.
+- 제도 확인: [관광청 공식 안내](https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00019.html). 이전 제도의 구매한도·수수료를 신규 지점 데이터에 전용하지 않음.

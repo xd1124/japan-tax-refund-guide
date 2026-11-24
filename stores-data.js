@@ -70,5 +70,918 @@ window.storeExpansion = (() => {
     common('chain-mistore','미쓰코시·이세탄','Mitsukoshi Isetan','三越 伊勢丹','https://www.isetan.mistore.jp/common/important_news/importantnews_detail024.html',{aliases:['미츠코시','이세탄','미쓰코시'],note:'2026.11.1 리펀드 제도 변경 공지. 지점별 카운터·환급업체·수수료는 별도 확인이 필요합니다.'}),
     common('chain-matsuzakaya','마쓰자카야','Matsuzakaya','松坂屋','https://www.matsuzakaya.co.jp/nagoya/service/gaikoku.html',{aliases:['마츠자카야'],note:'연결 자료는 나고야점 안내입니다. 나고야점의 수수료·카운터를 다른 지점에 적용하지 마세요.'})
   );
+  // Individually verified hundred-yen shops; no chain-wide eligibility inference.
+  data.push(...[
+  {
+    "id": "hundred-yen-daiso-1",
+    "ko": "다이소 나고야 사카에 스카일점",
+    "en": "DAISO Nagoya Sakae Skyle",
+    "ja": "DAISO 名古屋栄スカイル店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市中区栄3-4-5 スカイル7階",
+    "floor": "7F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/007352",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/007352",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-2",
+    "ko": "다이소 나고야 이마이케점",
+    "en": "DAISO Nagoya Imaike",
+    "ja": "DAISO 名古屋今池店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市千種区今池3-12-12",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/007231",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/007231",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-3",
+    "ko": "다이소 나고야 호리타점",
+    "en": "DAISO Nagoya Horita",
+    "ja": "DAISO 名古屋堀田店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市瑞穂区塩入町14番8号",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/005589",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/005589",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-4",
+    "ko": "다이소 나고야 나루파크점",
+    "en": "DAISO Nagoya Narupark",
+    "ja": "DAISO 名古屋なるぱーく店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市緑区浦里3丁目232 なるぱーく2階",
+    "floor": "2F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/003097",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/003097",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-5",
+    "ko": "다이소 샴피아포트 나고야 다카쓰지점",
+    "en": "DAISO Champia Port Nagoya Takatsuji",
+    "ja": "DAISO シャンピアポート名古屋高辻店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市昭和区白金三丁目6-24 シャンピアポート内",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/007339",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/007339",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-6",
+    "ko": "다이소 나고야 오스점",
+    "en": "DAISO Nagoya Osu",
+    "ja": "DAISO 名古屋大須店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "愛知県名古屋市中区大須3-11-19 1階",
+    "floor": "1F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/009076",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/009076",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-7",
+    "ko": "다이소 시부야 마크시티점",
+    "en": "DAISO Shibuya Mark City",
+    "ja": "DAISO 渋谷マークシティ店",
+    "region": "도쿄",
+    "city": "도쿄",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "東京都渋谷区道玄坂1-12-1 渋谷マークシティ1階",
+    "floor": "1F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/003086",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/003086",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      },
+      {
+        "url": "https://www.s-markcity.co.jp/shop-restaurant/w-1-4-1/",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-8",
+    "ko": "다이소 시부야 센터가이점",
+    "en": "DAISO Shibuya Center-gai",
+    "ja": "DAISO 渋谷センター街店",
+    "region": "도쿄",
+    "city": "도쿄",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "東京都渋谷区宇田川町35-2",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/008931",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/008931",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-9",
+    "ko": "다이소 하라주쿠점",
+    "en": "DAISO Harajuku",
+    "ja": "DAISO 原宿店",
+    "region": "도쿄",
+    "city": "도쿄",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "東京都渋谷区神宮前1-19-24 ビレッジ107 2階",
+    "floor": "2F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/007157",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/007157",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-10",
+    "ko": "다이소 난바 워크점",
+    "en": "DAISO Namba Walk",
+    "ja": "DAISO なんばウォーク店",
+    "region": "오사카",
+    "city": "오사카",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "大阪府大阪市中央区千日前1-5-4 虹のまち",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/002627",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/002627",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리. 시설 공식 페이지는 三番街로 안내. 타 추천 매장의 TAX FREE 표시는 이 지점에 적용하지 않음."
+      },
+      {
+        "url": "https://walk.osaka-chikagai.jp/index.php/shopguide/586",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-11",
+    "ko": "다이소 신사이바시점",
+    "en": "DAISO Shinsaibashi",
+    "ja": "DAISO 心斎橋店",
+    "region": "오사카",
+    "city": "오사카",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "大阪府大阪市中央区南船場3丁目10番3号3階",
+    "floor": "3F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/008646",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/008646",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-12",
+    "ko": "다이소 구로몬시장점",
+    "en": "DAISO Kuromon Market",
+    "ja": "DAISO 黒門市場店",
+    "region": "오사카",
+    "city": "오사카",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "大阪府大阪市中央区日本橋1-21-16 たこそうマンション1階",
+    "floor": "1F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/005312",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/005312",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-13",
+    "ko": "다이소 이온몰 교토점",
+    "en": "DAISO AEON Mall Kyoto",
+    "ja": "DAISO イオンモールKYOTO店",
+    "region": "기타 지역",
+    "city": "교토",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "京都府京都市南区西九条鳥居口町1番地 イオンモールKYOTO Kaede館4階",
+    "floor": "4F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/008286",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/008286",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-14",
+    "ko": "다이소 하카타 버스터미널점",
+    "en": "DAISO Hakata Bus Terminal Fukuoka",
+    "ja": "DAISO 博多バスターミナル店",
+    "region": "기타 지역",
+    "city": "후쿠오카",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "福岡県福岡市博多区博多駅中央街2-1 博多バスターミナル5階",
+    "floor": "5F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/001516",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/001516",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      },
+      {
+        "url": "https://www.h-bt.jp/floor/shop31.html",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-15",
+    "ko": "다이소 삿포로 다누키코지 2초메점",
+    "en": "DAISO Sapporo Tanukikoji 2-chome",
+    "ja": "DAISO 狸小路2丁目店",
+    "region": "기타 지역",
+    "city": "삿포로",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": "北海道札幌市中央区南2条西2丁目1 金市舘ビル6階",
+    "floor": "6F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.daiso-sangyo.co.jp/shop/detail/002210",
+    "sources": [
+      {
+        "url": "https://www.daiso-sangyo.co.jp/shop/detail/002210",
+        "label": "공식 지점 안내",
+        "scope": "브랜드 공식 지점 안내에서 지점·주소 및 서비스 목록 확인. 면세 취급 여부와 환급업체는 명시되지 않아 미확인으로 분리."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-16",
+    "ko": "세리아 시미즈야 후지가오카점",
+    "en": "Seria Shimizuya Fujigaoka",
+    "ja": "Seria 清水屋藤ヶ丘店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": "愛知県名古屋市守山区森孝東1-509 清水屋藤ヶ丘店4F",
+    "floor": "4F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.shimizuya.co.jp/store/p871/",
+    "sources": [
+      {
+        "url": "https://www.shimizuya.co.jp/store/p871/",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설/상점가 공식 안내에서 지점 존재 확인. 해당 세리아 지점의 면세 취급 여부와 환급업체는 확인되지 않음."
+      },
+      {
+        "url": "https://shop.seria-group.com/seria/info/000002229",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-17",
+    "ko": "세리아 오스점",
+    "en": "Seria Osu",
+    "ja": "Seria 大須店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": "愛知県名古屋市中区大須2-18-42",
+    "floor": null,
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.kinsyachi.com/shop/seriaosuten/",
+    "sources": [
+      {
+        "url": "https://www.kinsyachi.com/shop/seriaosuten/",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설/상점가 공식 안내에서 지점 존재 확인. 해당 세리아 지점의 면세 취급 여부와 환급업체는 확인되지 않음."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-18",
+    "ko": "세리아 아스날 가나야마점",
+    "en": "Seria Asunal Kanayama",
+    "ja": "Seria アスナル金山店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": "愛知県名古屋市中区金山1丁目17-1 アスナル金山3F",
+    "floor": "3F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.asunal.jp/shopguide/detail/?cd=000050",
+    "sources": [
+      {
+        "url": "https://www.asunal.jp/shopguide/detail/?cd=000050",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설/상점가 공식 안내에서 지점 존재 확인. 해당 세리아 지점의 면세 취급 여부와 환급업체는 확인되지 않음. 2026-11-01 시설 면세 대상 목록에 Seria는 없으나 직접적인 대상외 표기가 아니므로 미확인 유지."
+      },
+      {
+        "url": "https://www.asunal.jp/news/",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-19",
+    "ko": "세리아 빅카메라 나고야역 서쪽점",
+    "en": "Seria Bic Camera Nagoya Station West",
+    "ja": "Seria ビックカメラ名古屋駅西店",
+    "region": "나고야",
+    "city": "나고야",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": null,
+    "floor": "5F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://www.biccamera.com/bc/i/shop/shoplist/shop033.jsp",
+    "sources": [
+      {
+        "url": "https://www.biccamera.com/bc/i/shop/shoplist/shop033.jsp",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설/상점가 공식 안내에서 지점 존재 확인. 해당 세리아 지점의 면세 취급 여부와 환급업체는 확인되지 않음. 빅카메라 자체의 면세 서비스 표시는 입점 세리아의 면세 근거로 사용하지 않음. 공식 페이지 텍스트에서 번지 주소 미확인으로 null."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-20",
+    "ko": "세리아 키테라타운 후쿠오카 나가하마점",
+    "en": "Seria Kitera Town Fukuoka Nagahama",
+    "ja": "Seria キテラタウン福岡長浜店",
+    "region": "기타 지역",
+    "city": "후쿠오카",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": "福岡県福岡市中央区港1丁目10-1 キテラタウン福岡長浜3F",
+    "floor": "3F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "unknown",
+    "provider": "업체 미확인",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "unknown",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official-partial",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내에서 지점 존재를 확인했습니다. 면세 가능 여부·환급업체는 확인되지 않았으므로 구매 전에 매장에서 확인하세요.",
+    "source": "https://fukuoka-nagahama.kiteratown.jp/tenpo/seria/",
+    "sources": [
+      {
+        "url": "https://fukuoka-nagahama.kiteratown.jp/tenpo/seria/",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설/상점가 공식 안내에서 지점 존재 확인. 해당 세리아 지점의 면세 취급 여부와 환급업체는 확인되지 않음."
+      },
+      {
+        "url": "https://shop.seria-group.com/seria/info/000002463",
+        "label": "브랜드 공식 지점 안내",
+        "scope": "지점 존재 확인 · 면세 미확인"
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-daiso-21",
+    "ko": "다이소 마로니에 게이트 긴자점",
+    "en": "DAISO Marronnier Gate Ginza",
+    "ja": "DAISO マロニエゲート銀座店",
+    "region": "도쿄",
+    "city": "도쿄",
+    "brand": "DAISO",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "다이소",
+      "ダイソー"
+    ],
+    "address": null,
+    "floor": "마로니에 게이트 긴자 2 · 6F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "not-eligible",
+    "provider": "해당 없음",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "not-applicable",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내상 면세 대상이 아닌 지점입니다. 구매금액이 기준을 넘어도 이 지점 구매분은 환급 대상이 아닙니다.",
+    "source": "https://www.marronniergate.com/shop/index/304",
+    "sources": [
+      {
+        "url": "https://www.marronniergate.com/shop/index/304",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설 공식 지점 안내의 免税: 対象外 확인."
+      }
+    ]
+  },
+  {
+    "id": "hundred-yen-seria-22",
+    "ko": "세리아 이케부쿠로 P’PARCO점",
+    "en": "Seria Ikebukuro P'PARCO",
+    "ja": "Seria 池袋P'PARCO",
+    "region": "도쿄",
+    "city": "도쿄",
+    "brand": "Seria",
+    "scope": "branch",
+    "category": "100엔숍",
+    "aliases": [
+      "세리아",
+      "セリア"
+    ],
+    "address": null,
+    "floor": "P’PARCO 5F",
+    "parentFacilityId": null,
+    "taxFreeAvailability": "not-eligible",
+    "provider": "해당 없음",
+    "level": "unknown",
+    "refundProvider": null,
+    "refundProviderStatus": "not-applicable",
+    "taxFreeProcedure": null,
+    "taxFreeCounter": null,
+    "refundMethods": null,
+    "refundFee": null,
+    "refundFeeBasis": null,
+    "verifiedStatus": "official",
+    "verifiedAt": "2026-11-24",
+    "travelerReviews": [],
+    "note": "공식 안내상 면세 대상이 아닌 지점입니다. 구매금액이 기준을 넘어도 이 지점 구매분은 환급 대상이 아닙니다.",
+    "source": "https://ikebukuro.parco.jp/shop/detail/?cd=027190",
+    "sources": [
+      {
+        "url": "https://ikebukuro.parco.jp/shop/detail/?cd=027190",
+        "label": "공식 지점 안내",
+        "scope": "입점 시설 공식 지점 안내의 免税: 対象外 확인. 본관 주소는 P’PARCO 지점 주소로 전용하지 않음."
+      }
+    ]
+  }
+]);
   return data;
 })();
