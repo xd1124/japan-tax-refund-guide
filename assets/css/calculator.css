@@ -1,0 +1,28 @@
+.calcgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.bigval {
+  font-size: 35px;
+  font-weight: 850;
+  color: var(--green);
+  letter-spacing: -1px;
+}
+@media (max-width: 570px) {
+  .calcgrid {
+    grid-template-columns: 1fr;
+  }
+}
+.receipt-amount {
+  float: right;
+}
+.fx-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.krw-estimate {
+  font-size: clamp(18px, 5vw, 32px);
+}
