@@ -37,9 +37,10 @@ function filterStoreDirectory(directory, query, region) {
 }
 
 function appendStoreDetails(main,d) {
-  const labels={official:'면세 취급 · 공식 안내 확인',tenant:'면세 취급 · 입점 점포별 확인','branch-check':'면세 취급 · 지점별 확인',unknown:'면세 취급 · 확인되지 않음'};
+  const labels={official:'면세 가능 · 공식 확인','not-eligible':'면세 대상 아님 · 공식 확인',tenant:'면세 취급 · 입점 점포별 확인','branch-check':'면세 취급 · 지점별 확인',unknown:'면세 여부 미확인'};
   const meta=document.createElement('p');meta.className='store-item-detail';
-  meta.textContent=[d.region,d.scope==='chain'?'체인 공통':d.scope==='facility'?'쇼핑시설':'개별 지점',labels[d.taxFreeAvailability]||labels.unknown].join(' · ');
+  meta.textContent=[d.city||d.region,d.scope==='chain'?'체인 공통':d.scope==='facility'?'쇼핑시설':'개별 지점'].join(' · ');
+  const tax=document.createElement('span');tax.className='tax-state tax-'+(d.taxFreeAvailability||'unknown');tax.textContent=labels[d.taxFreeAvailability]||labels.unknown;meta.append(' · ',tax);
   main.prepend(meta);
   const links=main.querySelector('.store-result-links');
   (d.sources||[]).filter(s=>s.url!==d.source).forEach(s=>{const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.label+' ↗';links.append(a)});
