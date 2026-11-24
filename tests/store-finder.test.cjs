@@ -10,13 +10,13 @@ const legacyCode=html.match(/const storeDirectory=\[[\s\S]*?\n\];/)[0];
 assert.equal(legacyCode,before.match(/const storeDirectory=\[[\s\S]*?\n\];/)[0],'all original records and sources preserved verbatim');
 vm.runInContext(legacyCode+'\nextendStoreDirectory(storeDirectory);\n'+html.slice(html.indexOf('const providerAliases='),html.indexOf('function renderStoreSearch()')),ctx);
 const get=code=>vm.runInContext(code,ctx),search=(q,r='')=>get(`filterStoreDirectory(storeDirectory,${JSON.stringify(q)},${JSON.stringify(r)}).map(x=>x.d.id)`);
-assert.equal(get('storeDirectory.length'),58);
-assert.equal(new Set(get('storeDirectory.map(d=>d.id)')).size,58);
-assert.equal(search('','오사카').length,4);
+assert(get('storeDirectory.length')>58);
+assert.equal(new Set(get('storeDirectory.map(d=>d.id)')).size,get('storeDirectory.length'));
+assert(search('','오사카').length>=4);
 for(const [query,id] of [['나고야 로프트','loft-sakae'],['栄ロフト','loft-sakae'],['Nagoya Loft','loft-minato'],['신주쿠 로프트','loft-shinjuku'],['파르코','parco-shibuya'],['다카시마야','jr-takashimaya-nagoya'],['ㅇㄴㅁㅇㅌ','legacy-0']])assert(search(query).includes(id),query);
 assert(search('로프트','나고야').includes('loft-dome'));
 assert(!search('로프트','도쿄').includes('loft-minato'));
-assert.equal(search('','기타 지역').length,1);
+assert(search('','기타 지역').length>=1);
 const data=get('window.storeExpansion');
 for(const d of data){
   assert(d.sources.length);for(const s of d.sources)assert.equal(new URL(s.url).protocol,'https:');
@@ -33,3 +33,12 @@ assert.equal(data.find(d=>d.id==='chain-gu').refundFeeBasis,'환급액');
 const distribution=Object.fromEntries(['나고야','도쿄','기타 지역','전국 공통'].map(r=>[r,data.filter(d=>d.region===r).length]));
 console.log('PASS: syntax; 22 legacy records; region, multilingual/initial search; unique IDs; parent links; evidence separation; original app/calculator preservation.');
 console.log(JSON.stringify({added:data.length,distribution,branches:data.filter(d=>d.scope==='branch').length,officialBranches:data.filter(d=>d.scope==='branch'&&d.taxFreeAvailability==='official').length,unknownProviderBranches:data.filter(d=>d.scope==='branch'&&!d.refundProvider).length,newReviews:0},null,2));
+
+const oldCtx=vm.createContext({window:{}});vm.runInContext(cp.execFileSync('git',['show','abd694f:stores-data.js'],{cwd:root,encoding:'utf8'}),oldCtx);
+assert.equal(JSON.stringify(data.slice(0,36)),JSON.stringify(oldCtx.window.storeExpansion),'existing expansion preserved');
+const added=data.slice(36);assert.equal(new Set(added.map(d=>d.source)).size,added.length,'unique branch source');
+for(const brand of ['DAISO','Seria']){assert(added.some(d=>d.brand===brand&&d.region==='나고야'));assert(search(brand,'나고야').length);}
+for(const query of ['다이소','ダイソー','DAISO','ㄷㅇㅅ','세리아','セリア','Seria','ㅅㄹㅇ'])assert(search(query).length,query);
+for(const d of added){assert(d.scope==='branch');assert(['official','not-eligible','unknown'].includes(d.taxFreeAvailability));assert.equal(d.refundProvider,null);assert(!d.service);assert.equal(d.verifiedAt,'2026-11-24');if(d.taxFreeAvailability==='not-eligible')assert.equal(d.refundProviderStatus,'not-applicable');}
+assert.equal(added.filter(d=>d.taxFreeAvailability==='not-eligible').length,2);
+console.log('PASS: all 58 existing records, new branch identity, multilingual searches, independent eligibility/provider states');
