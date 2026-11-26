@@ -1,5 +1,5 @@
-import { filterStoreDirectory } from "./search.js?v=1dc4618cbf6a";
-import { externalLink } from "./dom.js?v=1dc4618cbf6a";
+import { filterStoreDirectory } from "./search.js?v=62079fed8885";
+import { externalLink } from "./dom.js?v=62079fed8885";
 
 export function initStoreFinder(
   document,
@@ -10,6 +10,8 @@ export function initStoreFinder(
 ) {
   const pageSize = 20;
   let visibleCount = pageSize;
+  let currentPage = "home";
+  const panel = document.getElementById("store-finder");
   function appendStoreDetails(main, d) {
     const labels = {
       official: "면세 가능 · 공식 확인",
@@ -54,11 +56,15 @@ export function initStoreFinder(
       region,
       providers,
     );
-    const shown = matched.slice(0, visibleCount);
+    const isHome = currentPage === "home";
+    const shown = matched.slice(0, isHome ? 4 : visibleCount);
     const more = document.getElementById("store-more");
-    more.hidden = shown.length >= matched.length;
-    more.textContent = Math.min(pageSize, matched.length - shown.length) + "개 더 보기";
-    count.textContent = matched.length + "개 검색 결과 · " + shown.length + "개 표시";
+    more.hidden = !isHome && shown.length >= matched.length;
+    more.textContent = isHome
+      ? "전체 매장 보기"
+      : Math.min(pageSize, matched.length - shown.length) + "개 더 보기";
+    count.textContent = matched.length + "개 검색 결과 · " + shown.length + "개 표시"
+      + (isHome && matched.length > shown.length ? " · 나머지는 전체 매장 보기에서 확인하세요." : "");
     result.replaceChildren();
     if (!matched.length) {
       const empty = document.createElement("div");
@@ -123,21 +129,11 @@ export function initStoreFinder(
       result.append(row);
     });
   }
-  const preview = document.getElementById("store-preview");
-  storeDirectory.slice(0, 4).forEach((store) => {
-    const row = document.createElement("div");
-    row.className = "store-item";
-    const main = document.createElement("div");
-    main.className = "store-item-main";
-    const name = document.createElement("div");
-    name.className = "store-item-title";
-    name.textContent = store.ko;
-    main.append(name);
-    appendStoreDetails(main, store);
-    row.append(main);
-    preview.append(row);
-  });
   document.getElementById("store-more").addEventListener("click", () => {
+    if (currentPage === "home") {
+      navigate("stores");
+      return;
+    }
     visibleCount += pageSize;
     renderStoreSearch();
   });
@@ -151,5 +147,12 @@ export function initStoreFinder(
   document
     .getElementById("store-region")
     ?.addEventListener("change", resetSearch);
-  renderStoreSearch();
+  function enter(page) {
+    if (page !== "home" && page !== "stores") return;
+    currentPage = page;
+    document.getElementById(page + "-store-mount").append(panel);
+    renderStoreSearch();
+  }
+  enter("home");
+  return { enter };
 }

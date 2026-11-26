@@ -1,5 +1,5 @@
-import { element } from "./dom.js?v=1dc4618cbf6a";
-import { readSaved, writeSaved, removeSaved } from "./storage.js?v=1dc4618cbf6a";
+import { element } from "./dom.js?v=62079fed8885";
+import { readSaved, writeSaved, removeSaved } from "./storage.js?v=62079fed8885";
 export const CHECKLIST_KEY = "japan-refund-dashboard-checks-v2";
 
 export function initChecklist(document, storage, items) {

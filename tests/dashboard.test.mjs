@@ -78,9 +78,9 @@ test("전체 앱 초기화·라우팅·상단 로고·이전 다음·해시 복�
 test("독립 검색 20개씩 표시·고정 미리보기·면세 상태·업체 이동", () => {
   const { document: d, input, click } = boot();
   const count = () => d.querySelectorAll("#store-results .store-item").length;
-  assert.equal(d.querySelectorAll("#store-preview .store-item").length, 4);
-  assert.equal(d.querySelectorAll("#home input, #home select").length, 0);
-  click('#home [data-route="stores"]');
+  assert.equal(d.querySelectorAll("#home #store-results .store-item").length, 4);
+  assert.equal(d.querySelectorAll("#home input, #home select").length, 2);
+  click("#store-more");
   assert.equal(d.querySelector(".page.on").id, "stores");
   assert.equal(count(), 20);
   for (const expected of [40, 60, 80]) {
@@ -88,7 +88,7 @@ test("독립 검색 20개씩 표시·고정 미리보기·면세 상태·업체 
     assert.equal(count(), expected);
   }
   assert.equal(d.getElementById("store-more").hidden, true);
-  assert.equal(d.querySelectorAll("#store-preview .store-item").length, 4);
+  assert.equal(d.querySelectorAll("#home #store-results .store-item").length, 0);
   input("#store-query", "다이소");
   input("#store-region", "나고야", "change");
   assert.equal(count(), 6);
@@ -228,7 +228,7 @@ test("검색 전체 데이터 필터링·추가 지점·빈 결과·해시 복�
 });
 
 test("지역 필터 후 더 보기·필터 변경 초기화와 작은 데이터 미리보기", () => {
-  const { document: d, input, click } = boot();
+  const { document: d, input, click } = boot({ hash: "#stores" });
   input("#store-region", "나고야", "change");
   assert.match(d.getElementById("store-count").textContent, /^21개 검색 결과/);
   assert.equal(d.querySelectorAll("#store-results .store-item").length, 20);
@@ -239,6 +239,31 @@ test("지역 필터 후 더 보기·필터 변경 초기화와 작은 데이터 
   assert.equal(d.querySelectorAll("#store-results .store-item").length, 20);
   for (const size of [0, 2, 5]) {
     const { document } = boot({ data: { stores: stores.slice(0, size) } });
-    assert.equal(document.querySelectorAll("#store-preview .store-item").length, Math.min(size, 4));
+    assert.equal(document.querySelectorAll("#home #store-results .store-item").length, Math.min(size, 4));
   }
+});
+
+test("메인 검색 UI·4개 제한·동일 패널과 검색 조건 왕복 보존", () => {
+  const { document: d, input, click, app } = boot();
+  const panel = d.getElementById("store-finder");
+  input("#store-query", "다이소");
+  input("#store-region", "나고야", "change");
+  assert.equal(d.querySelectorAll("#home .store-item").length, 4);
+  assert.match(d.getElementById("store-count").textContent, /6개 검색 결과.*전체 매장 보기/);
+  assert(d.querySelector("#home .store-provider"));
+  assert(d.querySelector("#home .store-status"));
+  assert(d.querySelector("#home .store-result-links a"));
+  click("#store-more");
+  assert.equal(d.querySelector(".page.on").id, "stores");
+  assert.equal(d.querySelectorAll("#stores .store-item").length, 6);
+  assert.equal(d.querySelector("#stores #store-finder"), panel);
+  click('#stores [data-route="home"]');
+  assert.equal(d.getElementById("store-query").value, "다이소");
+  assert.equal(d.getElementById("store-region").value, "나고야");
+  assert.equal(d.querySelectorAll("#home .store-item").length, 4);
+  assert.equal(d.querySelectorAll("#store-query").length, 1);
+
+  input("#store-query", "없음zzzz9999");
+  assert(d.querySelector("#home .store-empty"));
+  assert.equal(d.getElementById("store-more").hidden, false);
 });
