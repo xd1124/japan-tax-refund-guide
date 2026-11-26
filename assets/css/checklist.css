@@ -1,0 +1,70 @@
+.checkrow {
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0;
+  background: #fff;
+}
+.checkrow input {
+  accent-color: var(--green);
+  width: 19px;
+  height: 19px;
+}
+.checkrow:has(input:checked) {
+  background: #eff8f1;
+}
+.progress {
+  height: 9px;
+  background: #e6eee7;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 10px 0 22px;
+}
+.progress > div {
+  background: var(--green);
+  width: 0;
+  height: 100%;
+  transition: width 0.2s;
+}
+.checklist-shortcut-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.checklist-shortcut-head > div {
+  flex: 1;
+  min-width: 180px;
+}
+.checklist-shortcut h3 {
+  margin: 0;
+}
+.checklist-shortcut p {
+  margin: 4px 0 0;
+}
+.checklist-shortcut .progress {
+  margin: 16px 0;
+}
+@media (max-width: 570px) {
+  .checklist-shortcut-head {
+    gap: 10px;
+  }
+}
+@media (max-width: 570px) {
+  .checklist-shortcut-head > div {
+    min-width: 140px;
+  }
+}
+@media (max-width: 570px) {
+  .checklist-shortcut-head > b {
+    margin-left: auto;
+  }
+}
+.checklist-progress-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

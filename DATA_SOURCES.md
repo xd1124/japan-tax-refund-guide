@@ -2,12 +2,12 @@
 
 ## 구조와 유지보수
 
-- 기존 `index.html`의 `storeDirectory` 22개 원본 항목과 출처는 그대로 보존합니다.
-- 추가 지점·시설·체인 정보는 `stores-data.js`, 검색·상세 표시는 `store-finder.js`, 보충 스타일은 `store-finder.css`입니다. 외부 라이브러리는 없습니다.
+- 기존 22개와 추가 58개 항목의 내용·출처·확인 상태를 `data/stores.js`의 단일 스키마로 보존합니다. 실행 중 구형/신규 배열을 병합하지 않습니다.
+- 검색은 `assets/js/search.js`, 표시는 `assets/js/stores.js`, 스타일은 `assets/css/stores.css`입니다. 방문자용 외부 라이브러리는 없습니다.
 - `scope`는 branch(개별 지점), facility(쇼핑시설), chain(체인 공통)입니다. `parentFacilityId`는 입점 매장과 시설을 연결합니다.
-- `taxFreeAvailability`와 `refundProviderStatus`는 독립 상태입니다. 공식 면세 목록에 있어도 환급업체를 추정하지 않습니다. null은 미확인입니다.
+- `taxFreeAvailability`와 `providerStatus`(기존 refundProviderStatus/level)는 독립 상태입니다. 공식 면세 목록에 있어도 환급업체를 추정하지 않습니다. null은 미확인입니다. `providerId`는 기존 service, `providerLabel`은 기존 provider 표시를 보존합니다.
 - `verifiedAt`은 자료 검토일입니다. 현장 확인일, 게시일, 경험일을 의미하지 않습니다. 기존 확인일은 만들지 않았습니다.
-- 중요한 기능 변경은 `CHANGELOG.md`와 `changelog.js`를 함께 수정합니다. 사소한 데이터 보완은 이 문서에 기록합니다.
+- 중요한 기능 변경은 `CHANGELOG.md`와 `data/changelog.js`를 함께 수정합니다. 사소한 데이터 보완은 이 문서에 기록합니다. 아래 조사 기록의 이전 파일명은 조사 당시 기준입니다.
 
 ## 추가 범위
 

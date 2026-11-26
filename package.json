@@ -1,0 +1,19 @@
+{
+  "name": "japan-tax-refund-guide",
+  "version": "1.4.0",
+  "private": true,
+  "description": "일본 면세 환급 안내 정적 웹사이트",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:stores": "node --test tests/stores.test.mjs",
+    "test:dashboard": "node --test tests/dashboard.test.mjs",
+    "test:fx": "node --test tests/calculator.test.mjs",
+    "cache": "node scripts/version-assets.mjs",
+    "cache:check": "node scripts/version-assets.mjs --check",
+    "dev": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12"
+  },
+  "type": "module"
+}

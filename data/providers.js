@@ -1,0 +1,387 @@
+// Reviewed content only. Unknown values must remain null or unknown.
+export const providers = {
+  jtax: {
+    name: "J-TaxRefund",
+    subtitle: "드럭스토어·패션·가전 매장에서 볼 수 있는 웹 기반 환급 서비스",
+    stores:
+      "돈키호테, 빅카메라, 마쓰모토키요시, 쓰루하, 다이코쿠, 선드럭, 유니클로, GU (제휴 및 적용 지점은 각 영수증 기준)",
+    registration:
+      "앱 설치 없이 매장 영수증이나 안내판의 QR로 웹페이지에 접속해 신청. 유니클로는 공식 홈페이지에서 J-TaxRefund 이용을 안내합니다.",
+    fees: "제공된 매장별 참고 수치: 돈키호테·빅카메라·쓰루하·다이코쿠·선드럭 0%, 마쓰모토키요시 약 0.33%, 유니클로·GU 약 1%. 이 매장별 요율은 공식 일괄 수수료표로 확인되지 않았으므로 실제 신청 화면에서 검증하세요. 현금 환급 및 카드 송금 비용은 별도일 수 있습니다.",
+    timing:
+      "여행자 안내에서는 수 주~약 2개월 소요 가능성도 언급됩니다. 공식 공통 지급 보장 기간은 미확인입니다.",
+    caution:
+      "소액 환급 시 특히 주의: Visa 환급액 2,000엔 미만에 건당 US$0.70가 발생한다는 제보 수치가 있으나, 적용 여부와 기준은 카드 수령 화면에서 확인하세요.",
+    verified:
+      "유니클로의 J-TaxRefund 사용은 공식 확인. 나머지 매장 목록·퍼센트·일정은 사용자 제공 참고 정보이며 각 매장별로 재확인이 필요합니다.",
+    sources: [
+      ["J-TaxRefund 공식", "https://j-taxrefund.com/"],
+      [
+        "유니클로 공식 면세 안내",
+        "https://www.uniqlo.com/jp/ja/special-feature/tax-free",
+      ],
+    ],
+    tabLabel: "J-TaxRefund",
+    aliases: [
+      "J-TaxRefund",
+      "J Tax Refund",
+      "JTaxRefund",
+      "제이택스리펀드",
+      "제이 택스 리펀드",
+      "제이택스환급",
+      "제이택스리펀",
+    ],
+    guide: {
+      steps: [
+        [
+          "웹페이지 접속",
+          "매장 QR로 J-TaxRefund에 접속합니다. 별도 앱 설치는 필요하지 않습니다.",
+        ],
+        [
+          "최초 정보 등록",
+          "화면 안내에 따라 여권 정보와 연락처를 등록합니다. 별도 회원가입·인증 화면이 나오면 해당 절차를 완료합니다.",
+        ],
+        [
+          "환급 수령 방법 등록",
+          "카드·은행 송금·QR 결제 앱 등 화면에 표시되는 수단 중에서 선택하고 수령 정보를 입력합니다.",
+        ],
+        [
+          "구매 내역 확인",
+          "등록은 최초 1회이며 구매할 때마다 반복할 필요는 없습니다. 이후 구매 내역이 연결되었는지 확인합니다.",
+        ],
+        [
+          "출국 시 세관 확인",
+          "출국 전에 구매품의 반출 확인을 완료합니다. 웹 등록만으로 환급이 확정되지는 않습니다.",
+        ],
+        [
+          "환급 확인",
+          "세관 확인 후 등록한 수령 수단으로 환급 절차가 시작됩니다. 신청 상태와 실제 입금 내역을 확인합니다.",
+        ],
+      ],
+      sources: [
+        [
+          "공식 등록·환급 절차",
+          "https://j-taxfree.jp/tax-free/refund/?OpBrower=1",
+        ],
+        ["공식 서비스 안내", "https://j-taxfree.jp/service/j-taxrefund/"],
+      ],
+      extras: [
+        {
+          afterStep: 1,
+          note: "주의: 로그인 아이디는 이메일로 발송됩니다.",
+          image: "assets/images/registration-email.png",
+          alt: "J-TaxRefund 계정 생성 및 로그인 아이디 안내 이메일 예시",
+        },
+      ],
+    },
+  },
+  globalblue: {
+    name: "Global Blue",
+    subtitle: "백화점·명품·대형 전자제품 매장에서 주로 접하는 글로벌 환급 업체",
+    stores:
+      "한큐·한신, 다이마루·마쓰자카야, 다카시마야, 이세탄·미쓰코시, 세이부·소고, 요도바시카메라, 스기약국 등 (매장·지점별 제휴 확인 필요)",
+    registration:
+      "백화점 면세 카운터에서 등록하거나 Global Blue 앱·웹에서 환급 기록과 수령 수단을 확인할 수 있습니다.",
+    fees: "제공된 참고 범위: 세전 구매금액의 약 1.6~2.3%, 다카시마야는 소비세 환급액의 약 23% 공제. 지점별 공식 고정요율로 확인되지 않았습니다. 외화 환급 시 환율 변환 비용도 확인하세요.",
+    timing:
+      "Global Blue 일반 도움말에는 카드 환급 3~5일 사례가 안내되어 있지만, 2026년 일본 개별 구매 건에 일률적으로 보장되는 기간은 아닙니다.",
+    caution:
+      "공식 발표에 따르면 환급 진행 상태를 실시간으로 확인할 수 있는 디지털 조회 기능이 제공됩니다. Cash Japan은 간사이 등을 포함한 일부 공항에서 여러 업체의 현금 수령을 지원합니다(해당 구매 건의 지원 여부 확인 필수).",
+    verified:
+      "일본 신규 제도 대응, 실시간 조회, Cash Japan 참여는 공식 확인. 개별 백화점별 수수료율·제휴는 별도 확인 필요.",
+    sources: [
+      ["Global Blue 공식", "https://www.globalblue.com/"],
+      [
+        "Global Blue 일본 신규 제도 발표",
+        "https://www.globalblue.com/fr/about-us/media/global-blue-support-japan-new-refund-based-framework",
+      ],
+      ["Global Blue 도움말", "https://mcc.globalblue.com/helpCenter"],
+    ],
+    tabLabel: "Global Blue",
+    aliases: [
+      "Global Blue",
+      "GlobalBlue",
+      "글로벌블루",
+      "글로벌 블루",
+      "글로발블루",
+    ],
+    guide: {
+      note: "일본용 회원가입 화면의 상세 순서는 공식 공개 자료에서 확인되지 않았습니다. 아래는 매장 안내와 신청 화면에 따라 진행하는 확인 순서입니다.",
+      steps: [
+        [
+          "매장 안내 열기",
+          "매장에서 받은 Global Blue QR 또는 안내 링크로 접속합니다. 면세 카운터 안내가 있으면 먼저 해당 카운터에서 구매 건을 확인합니다.",
+        ],
+        [
+          "가입·로그인 안내 확인",
+          "접속 화면에서 계정 가입이나 로그인을 요구하는 경우에 진행합니다. 앱 회원가입만으로 구매 건의 환급 신청이 완료되었다고 판단하지 마세요.",
+        ],
+        [
+          "구매 건 및 본인 정보 확인",
+          "매장·구매 내역과 본인 정보가 맞는지 확인하고, 해당 화면에서 요구하는 정보를 입력합니다.",
+        ],
+        [
+          "수령 방법 확인",
+          "해당 구매 건에서 제공하는 환급 수단을 선택합니다. 수수료와 수령 통화를 확인한 뒤 등록 완료 여부를 확인합니다.",
+        ],
+        [
+          "출국 시 세관 확인",
+          "출국 전에 구매품의 반출 확인을 마칩니다. 공항 현금 수령은 해당 건의 지원 여부와 수령 창구 안내를 확인합니다.",
+        ],
+        [
+          "진행 상태와 입금 확인",
+          "매장에서 제공한 조회 경로나 고객지원 안내로 처리 상태를 확인하고, 선택한 수령 수단의 입금 내역을 확인합니다.",
+        ],
+      ],
+      sources: [
+        [
+          "Global Blue 일본 제도 안내",
+          "https://www.globalblue.com/fr/about-us/media/global-blue-support-japan-new-refund-based-framework",
+        ],
+        [
+          "일본 관광청 공통 환급 절차",
+          "https://www.mlit.go.jp/kankocho/tax-free/content/001990295.pdf",
+        ],
+      ],
+      extras: [],
+    },
+    appText:
+      "Global Blue 앱 제공 · 환급 기록 및 진행 상태 조회에 활용할 수 있습니다.",
+  },
+  pie: {
+    name: "PIE VAT",
+    subtitle: "아울렛·쇼핑몰 및 제휴 브랜드에서 사용하는 앱 기반 환급 서비스",
+    stores:
+      "미쓰이 아울렛 파크, 라라포트, 시부야109, 몽벨 등 (각 지점의 안내 QR/매장 제휴 여부 확인)",
+    registration:
+      "PIE VAT 앱을 설치한 뒤 매장에서 받은 QR코드를 스캔하거나 6자리 코드를 입력합니다. 면세 카운터가 있는 매장은 PIE VAT Station을 안내할 수 있습니다.",
+    fees: "공식 확인: 서비스 수수료는 세전 구매금액의 1.5~3.0%, 출금 수수료는 세전 구매금액의 0.28~0.32%입니다. 실제 환급액에서 공제됩니다.",
+    timing:
+      "공식 FAQ에는 인출 신청 후 늦어도 약 1개월 내 지급을 목표로 한다고 안내합니다. 2026년 11월에는 지급 지연 공지도 있어, “영업일 15일 확정”으로 보기는 어렵습니다.",
+    caution:
+      "앱의 환급 지갑에 반영된 금액을 카드 등 지원 수단으로 출금합니다. 현금 공항 수령 지원 여부는 해당 건의 앱 안내를 기준으로 확인하세요.",
+    verified:
+      "앱·6자리 코드 등록, 수수료율, 인출 기간은 공식 확인. 제휴 매장 및 현금 지원 여부는 매장/구매 건에 따라 확인 필요.",
+    sources: [
+      ["PIE VAT 공식 (한국어)", "https://pievat.com/ko/tourists/japan"],
+      [
+        "PIE VAT 구매 등록 방법",
+        "https://pievat.com/ko/tourists/japan/process-for-shopping",
+      ],
+      [
+        "공식 수수료 안내",
+        "https://help.pievat.com/en/articles/17765315-what-fees-apply-when-using-pie-vat-in-japan",
+      ],
+      [
+        "공식 지급 소요 안내",
+        "https://help.pievat.com/en/articles/2417438-when-will-i-receive-my-refund",
+      ],
+      [
+        "2026년 11월 지급 지연 공지",
+        "https://help.pievat.com/en/articles/17700067-important-notice-regarding-withdrawal-delays-updated-on-nov-17-2026",
+      ],
+    ],
+    tabLabel: "PIE VAT",
+    aliases: [
+      "PIE VAT",
+      "PIEVAT",
+      "PIE",
+      "파이VAT",
+      "파이브이에이티",
+      "피에이이 VAT",
+      "피아이이 VAT",
+      "피아이이브이에이티",
+    ],
+    guide: {
+      steps: [
+        [
+          "회원가입·로그인",
+          "PIE VAT 앱을 설치하고 Apple ID·Google ID 또는 이메일로 가입·로그인합니다.",
+        ],
+        [
+          "개인정보 입력",
+          "하단 사람 모양 아이콘에서 개인정보를 입력한 뒤 + 버튼으로 신청을 시작합니다.",
+        ],
+        [
+          "구매 등록",
+          "매장에서 받은 QR을 스캔하거나 6자리 코드를 입력합니다. 면세 카운터 이용 매장은 PIE VAT Station 안내를 따릅니다.",
+        ],
+        [
+          "영수증·여권 촬영",
+          "영수증 전체와 여권 사진면, 최근 입국 허가 스탬프를 안내에 따라 촬영합니다. 글자와 영수증 번호가 잘 보여야 합니다.",
+        ],
+        [
+          "출국 정보 및 신청 제출",
+          "출국 방법·예정일을 입력하고 내용을 검토한 뒤 동의 항목을 확인하여 환급 신청을 제출합니다.",
+        ],
+        [
+          "수령 방법 등록·세관 확인",
+          "Refund Method에서 수령 수단을 설정합니다. 출국 시에는 별도로 구매품의 세관 반출 확인을 완료합니다.",
+        ],
+        [
+          "출금 신청",
+          "출금 가능한 금액을 확인하고 통화를 선택한 뒤 Withdraw에서 내용을 검토하여 제출합니다. 이후 지급 상태와 입금을 확인합니다.",
+        ],
+      ],
+      sources: [
+        [
+          "PIE VAT 공식 신청 순서",
+          "https://pievat.com/ko/tourists/japan/process-for-shopping",
+        ],
+        [
+          "일본 관광청 공통 환급 절차",
+          "https://www.mlit.go.jp/kankocho/tax-free/content/001990295.pdf",
+        ],
+      ],
+      extras: [],
+    },
+    appText:
+      "PIE VAT 앱 제공 · 매장 QR코드 또는 코드를 이용해 구매 건을 등록할 수 있습니다.",
+  },
+  jprefund: {
+    name: "JPrefund / SmartDetax",
+    subtitle:
+      "SmartDetax 면세 판매 기록 시스템과 연결되는 JPrefund 환급 서비스",
+    stores:
+      "3COINS, 시마무라 등에서 이용 사례가 보고되었습니다. “시마무라”는 매장 유형·브랜드가 혼동될 수 있으므로 영수증의 업체명을 확인하세요.",
+    registration:
+      "매장에서 안내하는 QR 또는 전용 웹을 통해 환급을 신청합니다. SmartDetax는 판매 기록을 관리하는 시스템, JPrefund는 구매자 환급 신청 서비스입니다.",
+    fees: "여행자 안내 참고: 3COINS 건당 ¥320, 시마무라 약 1.3%. 모두 매장·구매 건별로 달라질 수 있으며 공식 업체의 통일 수수료로 확정되지 않았습니다.",
+    timing:
+      "지급 소요는 송금 수단과 승인 시점에 따라 달라집니다. 공식 보장 날짜는 확인되지 않았습니다.",
+    caution:
+      "JPrefund와 J-Refund, J-TaxRefund는 이름이 비슷하지만 동일 업체로 단정하면 안 됩니다. 검색 결과보다 영수증 QR에서 바로 들어가는 편이 안전합니다.",
+    verified:
+      "SmartDetax와 JPrefund의 관계, 환급 시스템 운영은 회사 공식 자료로 확인. 매장별 비용은 여행자 자료 기반 참고.",
+    sources: [
+      ["SmartDetax / JPrefund 공식", "https://smartdetax.com/"],
+      ["JPrefund 공식 이용약관", "https://smartdetax.com/terms/jprefund/"],
+      [
+        "제휴·수수료 참고 자료(비공식)",
+        "https://jptaxrefund.com/ko/blog/tax-refund-company-by-store",
+      ],
+    ],
+    tabLabel: "JPrefund / SmartDetax",
+    aliases: [
+      "JPrefund",
+      "JP Refund",
+      "JPRefund",
+      "SmartDetax",
+      "스마트디택스",
+      "스마트디텍스",
+      "제이피리펀드",
+      "제이피환급",
+    ],
+    guide: {
+      note: "공식 안내에서 별도 회원가입의 세부 화면 순서는 확인되지 않았습니다. 로그인·인증 요청은 실제 JPrefund 신청 화면을 따르세요.",
+      steps: [
+        [
+          "JPrefund 접속",
+          "매장에서 받은 QR이나 거래 안내로 JPrefund 환급 신청 페이지를 엽니다.",
+        ],
+        [
+          "계정 및 본인 확인",
+          "가입·로그인 요청이 있으면 완료하고, 여권 정보와 화면에서 요구하는 본인확인 자료를 제출합니다. 여권 이미지나 셀피가 요청될 수 있습니다.",
+        ],
+        [
+          "구매 건 확인",
+          "QR·거래번호·영수증 등으로 해당 구매 건을 확인합니다. 표시된 매장과 구매 내용이 맞는지 살펴봅니다.",
+        ],
+        [
+          "환급 수령 정보 등록",
+          "신청 화면에 제공되는 수령 수단을 선택하고 필요한 수령 정보를 입력합니다. 수수료 및 환급 조건을 확인한 뒤 신청을 완료합니다.",
+        ],
+        [
+          "출국 시 세관 확인",
+          "출국 전에 구매품의 반출 확인을 받습니다. 구매 기록·본인 정보·세관 승인 정보가 확인되어야 송금 절차가 진행됩니다.",
+        ],
+        [
+          "환급 확인",
+          "신청 화면의 처리 상태와 수령 내역을 확인합니다. 정보 보완이나 송금업체의 추가 확인 요청이 있으면 안내에 따라 처리합니다.",
+        ],
+      ],
+      sources: [
+        ["JPrefund 공식 기능 안내", "https://smartdetax.com/functions/"],
+        [
+          "공식 이용약관·본인확인 및 송금",
+          "https://smartdetax.com/terms/jprefund/",
+        ],
+      ],
+      extras: [
+        {
+          afterStep: 1,
+          note: "주의: 주소는 실제 거주하는 한국 집 주소를 영문으로 입력해 주세요.",
+          link: "https://www.juso.go.kr/",
+          label: "한국 도로명주소 영문 변환·조회 ↗",
+        },
+      ],
+    },
+  },
+  ocean: {
+    name: "OceanRefund",
+    subtitle: "카드 환급에 등록한 실제 오사카 구매 사례가 있는 업체",
+    stores:
+      "이번 여행에서 이용한 애니메이트 우메다 건 등. 매장별 환급 서비스는 영수증/QR 안내 기준입니다.",
+    registration:
+      "구매 건의 환급 신청번호를 확인하고 지원되는 카드 등 환급 수령 방법을 선택합니다.",
+    fees: "실제 화면 사례: 소비세 상당액 ¥1,358에서 처리 수수료 ¥285, 송금 수수료 ¥0 차감 → 예상 환급액 ¥1,073. 이는 한 건의 실제 예시이며 일률적인 수수료율이 아닙니다.",
+    timing:
+      "환급 발송 후 카드사 및 결제 네트워크에서 반영까지 시간이 걸릴 수 있습니다. 고정 기간은 확인되지 않았습니다.",
+    caution:
+      "Mastercard 체크카드, KRW 수령 등록 사례. 카드로의 환급 거래가 실제로 언제 계좌에 표시되는지는 발급사 정책에 따라 다릅니다.",
+    verified:
+      "금액은 여행 중 사용자가 보여준 신청 화면에 근거. 지급 완료 여부는 확인되지 않았습니다.",
+    sources: [["Ocean 공식", "https://ocean.inc/"]],
+    tabLabel: "OceanRefund",
+    aliases: [
+      "OceanRefund",
+      "Ocean Refund",
+      "오션리펀드",
+      "오션 리펀드",
+      "오션환급",
+    ],
+    guide: {
+      steps: [
+        [
+          "회원가입·로그인",
+          "매장 Ocean QR로 접속하여 화면 안내에 따라 가입하거나 로그인합니다. 웹·WeChat·LINE 접속 방식이 제공됩니다.",
+        ],
+        [
+          "여권·입국 정보 등록",
+          "연락처 또는 로그인 계정, 여권 정보와 입국 기록을 등록하고 본인확인을 완료합니다. 여권 원본과 정확히 일치하도록 입력합니다.",
+        ],
+        [
+          "구매 내역 확인",
+          "연결된 구매 기록을 확인합니다. 본인확인이 끝나지 않았다면 먼저 인증을 완료해야 내역이 표시될 수 있습니다.",
+        ],
+        [
+          "환급 수령 방법 등록",
+          "화면에서 지원되는 수령 방법을 등록합니다. 이용 불가 안내가 나오면 지원되는 다른 방법으로 변경합니다.",
+        ],
+        [
+          "출국 시 세관 확인",
+          "출국 시 반출 확인을 받은 뒤 구매 건이 Approved로 바뀌고 지갑 잔액에 반영되는지 확인합니다.",
+        ],
+        [
+          "지갑에서 출금",
+          "승인 후 180일 이내에 Withdraw를 눌러 출금 신청합니다. Approved 표시만으로 송금까지 완료된 것은 아닙니다.",
+        ],
+        [
+          "송금 및 입금 확인",
+          "Wallet에서 출금 진행 상태를 확인합니다. Refund sent 이후 실제 반영까지 시간이 걸릴 수 있으므로 카드·계좌 내역도 확인합니다.",
+        ],
+      ],
+      sources: [
+        [
+          "Ocean 공식 회원가입 안내",
+          "https://support.ocean.inc/hc/en-us/articles/5764433437470-How-do-I-create-an-Ocean-account",
+        ],
+        [
+          "Ocean 공식 승인·출금 상태 안내",
+          "https://support.ocean.inc/hc/en-us/articles/5764417216286-What-does-each-refund-status-in-my-Ocean-account-mean",
+        ],
+      ],
+      extras: [],
+    },
+  },
+};
