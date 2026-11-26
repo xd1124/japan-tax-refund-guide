@@ -193,3 +193,12 @@
   font-size: 13px;
   margin-bottom: 6px;
 }
+
+/* Independent search and fixed dashboard preview share card styles. */
+#stores .store-expand[hidden] { display: none; }
+#stores .store-search-input { min-height: 44px; min-width: 0; }
+#stores .store-item-side { overflow-wrap: anywhere; }
+#store-preview { margin-top: 16px; }
+@media (max-width: 570px) {
+  #stores .store-search { padding-bottom: 68px; }
+}

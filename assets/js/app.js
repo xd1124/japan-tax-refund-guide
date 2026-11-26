@@ -1,16 +1,16 @@
-import { stores } from "../../data/stores.js?v=e77828885b05";
-import { providers } from "../../data/providers.js?v=e77828885b05";
-import { guideContent } from "../../data/guides.js?v=e77828885b05";
-import { checklistItems } from "../../data/checklist.js?v=e77828885b05";
-import { changelogEntries } from "../../data/changelog.js?v=e77828885b05";
-import { initNavigation } from "./navigation.js?v=e77828885b05";
-import { initProviders } from "./providers.js?v=e77828885b05";
-import { initGuides } from "./guides.js?v=e77828885b05";
-import { initChecklist } from "./checklist.js?v=e77828885b05";
-import { initCalculator } from "./calculator.js?v=e77828885b05";
-import { initStoreFinder } from "./stores.js?v=e77828885b05";
-import { initScrollControls } from "./scroll.js?v=e77828885b05";
-import { initChangelog } from "./changelog.js?v=e77828885b05";
+import { stores } from "../../data/stores.js?v=1dc4618cbf6a";
+import { providers } from "../../data/providers.js?v=1dc4618cbf6a";
+import { guideContent } from "../../data/guides.js?v=1dc4618cbf6a";
+import { checklistItems } from "../../data/checklist.js?v=1dc4618cbf6a";
+import { changelogEntries } from "../../data/changelog.js?v=1dc4618cbf6a";
+import { initNavigation } from "./navigation.js?v=1dc4618cbf6a";
+import { initProviders } from "./providers.js?v=1dc4618cbf6a";
+import { initGuides } from "./guides.js?v=1dc4618cbf6a";
+import { initChecklist } from "./checklist.js?v=1dc4618cbf6a";
+import { initCalculator } from "./calculator.js?v=1dc4618cbf6a";
+import { initStoreFinder } from "./stores.js?v=1dc4618cbf6a";
+import { initScrollControls } from "./scroll.js?v=1dc4618cbf6a";
+import { initChangelog } from "./changelog.js?v=1dc4618cbf6a";
 
 const initialized = new WeakMap();
 export function initApp(document, window, data = {}) {
@@ -34,7 +34,6 @@ export function initApp(document, window, data = {}) {
   initChecklist(document, storage, data.checklistItems || checklistItems);
   initStoreFinder(
     document,
-    window,
     data.stores || stores,
     providerData,
     navigation.navigate,

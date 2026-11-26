@@ -1,15 +1,15 @@
-import { filterStoreDirectory } from "./search.js?v=e77828885b05";
-import { externalLink } from "./dom.js?v=e77828885b05";
+import { filterStoreDirectory } from "./search.js?v=1dc4618cbf6a";
+import { externalLink } from "./dom.js?v=1dc4618cbf6a";
 
 export function initStoreFinder(
   document,
-  window,
   storeDirectory,
   providers,
   navigate,
   selectProvider,
 ) {
-  let storeFinderExpanded = false;
+  const pageSize = 20;
+  let visibleCount = pageSize;
   function appendStoreDetails(main, d) {
     const labels = {
       official: "면세 가능 · 공식 확인",
@@ -34,6 +34,7 @@ export function initStoreFinder(
     meta.append(" · ", tax);
     main.prepend(meta);
     const links = main.querySelector(".store-result-links");
+    if (!links) return;
     (d.sources || [])
       .filter((s) => s.url !== d.source)
       .forEach((s) => {
@@ -53,16 +54,11 @@ export function initStoreFinder(
       region,
       providers,
     );
-    const preview = !storeFinderExpanded && !input.value.trim() && !region;
-    const shown = preview ? matched.slice(0, 4) : matched;
-    const expand = document.getElementById("store-expand");
-    expand.textContent = preview
-      ? "전체 매장 보기 (" + storeDirectory.length + ")"
-      : "기본 미리보기로";
-    expand.setAttribute("aria-expanded", String(!preview));
-    count.textContent = preview
-      ? `전체 ${matched.length}개 중 ${shown.length}개 미리보기 · 검색하면 전체 결과를 표시합니다`
-      : `${matched.length}개 검색 결과 · 지점·쇼핑시설·체인 공통 안내`;
+    const shown = matched.slice(0, visibleCount);
+    const more = document.getElementById("store-more");
+    more.hidden = shown.length >= matched.length;
+    more.textContent = Math.min(pageSize, matched.length - shown.length) + "개 더 보기";
+    count.textContent = matched.length + "개 검색 결과 · " + shown.length + "개 표시";
     result.replaceChildren();
     if (!matched.length) {
       const empty = document.createElement("div");
@@ -127,31 +123,33 @@ export function initStoreFinder(
       result.append(row);
     });
   }
-  document.getElementById("go-store-finder")?.addEventListener("click", () => {
-    navigate("home");
-    window.requestAnimationFrame(() => {
-      document
-        .querySelector("#home .store-search")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  const preview = document.getElementById("store-preview");
+  storeDirectory.slice(0, 4).forEach((store) => {
+    const row = document.createElement("div");
+    row.className = "store-item";
+    const main = document.createElement("div");
+    main.className = "store-item-main";
+    const name = document.createElement("div");
+    name.className = "store-item-title";
+    name.textContent = store.ko;
+    main.append(name);
+    appendStoreDetails(main, store);
+    row.append(main);
+    preview.append(row);
   });
-  document.getElementById("store-expand").addEventListener("click", () => {
-    const active =
-      storeFinderExpanded ||
-      document.getElementById("store-query").value.trim() ||
-      document.getElementById("store-region").value;
-    storeFinderExpanded = !active;
-    if (active) {
-      document.getElementById("store-query").value = "";
-      document.getElementById("store-region").value = "";
-    }
+  document.getElementById("store-more").addEventListener("click", () => {
+    visibleCount += pageSize;
     renderStoreSearch();
   });
+  function resetSearch() {
+    visibleCount = pageSize;
+    renderStoreSearch();
+  }
   document
     .getElementById("store-query")
-    ?.addEventListener("input", renderStoreSearch);
+    ?.addEventListener("input", resetSearch);
   document
     .getElementById("store-region")
-    ?.addEventListener("change", renderStoreSearch);
+    ?.addEventListener("change", resetSearch);
   renderStoreSearch();
 }

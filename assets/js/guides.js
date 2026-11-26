@@ -1,4 +1,4 @@
-import { element, animatePanel } from "./dom.js?v=e77828885b05";
+import { element, animatePanel } from "./dom.js?v=1dc4618cbf6a";
 
 export function initGuides(document, content) {
   const panel = document.getElementById("beforehome-content");

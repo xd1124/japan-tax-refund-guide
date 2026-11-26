@@ -1,5 +1,12 @@
 // Reviewed content only. Unknown values must remain null or unknown.
 export const changelogEntries = [
+{
+  "date": "2026.11.26",
+  "version": "v1.5",
+  "summary": [
+    "전체 매장 검색을 별도 화면으로 분리했습니다. 메인은 4개 미리보기를 유지하고 검색 결과는 20개씩 더 볼 수 있습니다."
+  ]
+},
   {
     date: "2026.11.24",
     version: "v1.4",
