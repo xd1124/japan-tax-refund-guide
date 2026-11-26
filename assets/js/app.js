@@ -1,16 +1,16 @@
-import { stores } from "../../data/stores.js?v=1dc4618cbf6a";
-import { providers } from "../../data/providers.js?v=1dc4618cbf6a";
-import { guideContent } from "../../data/guides.js?v=1dc4618cbf6a";
-import { checklistItems } from "../../data/checklist.js?v=1dc4618cbf6a";
-import { changelogEntries } from "../../data/changelog.js?v=1dc4618cbf6a";
-import { initNavigation } from "./navigation.js?v=1dc4618cbf6a";
-import { initProviders } from "./providers.js?v=1dc4618cbf6a";
-import { initGuides } from "./guides.js?v=1dc4618cbf6a";
-import { initChecklist } from "./checklist.js?v=1dc4618cbf6a";
-import { initCalculator } from "./calculator.js?v=1dc4618cbf6a";
-import { initStoreFinder } from "./stores.js?v=1dc4618cbf6a";
-import { initScrollControls } from "./scroll.js?v=1dc4618cbf6a";
-import { initChangelog } from "./changelog.js?v=1dc4618cbf6a";
+import { stores } from "../../data/stores.js?v=62079fed8885";
+import { providers } from "../../data/providers.js?v=62079fed8885";
+import { guideContent } from "../../data/guides.js?v=62079fed8885";
+import { checklistItems } from "../../data/checklist.js?v=62079fed8885";
+import { changelogEntries } from "../../data/changelog.js?v=62079fed8885";
+import { initNavigation } from "./navigation.js?v=62079fed8885";
+import { initProviders } from "./providers.js?v=62079fed8885";
+import { initGuides } from "./guides.js?v=62079fed8885";
+import { initChecklist } from "./checklist.js?v=62079fed8885";
+import { initCalculator } from "./calculator.js?v=62079fed8885";
+import { initStoreFinder } from "./stores.js?v=62079fed8885";
+import { initScrollControls } from "./scroll.js?v=62079fed8885";
+import { initChangelog } from "./changelog.js?v=62079fed8885";
 
 const initialized = new WeakMap();
 export function initApp(document, window, data = {}) {
@@ -25,14 +25,16 @@ export function initApp(document, window, data = {}) {
     storage,
     fetchRate: (...args) => window.fetch(...args),
   });
+  let storeFinder;
   const navigation = initNavigation(document, window, (page) => {
     if (page === "summary") calculator.refresh();
+    storeFinder?.enter(page);
   });
   const providerData = data.providers || providers;
   const providerView = initProviders(document, providerData);
   initGuides(document, data.guideContent || guideContent);
   initChecklist(document, storage, data.checklistItems || checklistItems);
-  initStoreFinder(
+  storeFinder = initStoreFinder(
     document,
     data.stores || stores,
     providerData,

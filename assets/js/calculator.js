@@ -1,4 +1,4 @@
-import { readSaved, writeSaved } from "./storage.js?v=1dc4618cbf6a";
+import { readSaved, writeSaved } from "./storage.js?v=62079fed8885";
 
 export const FX_KEY = "japan-refund-official-fx-v1";
 export const FX_URL = "https://api.frankfurter.dev/v2/rate/JPY/KRW";
