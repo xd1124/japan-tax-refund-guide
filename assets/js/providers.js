@@ -1,4 +1,4 @@
-import { element, externalLink, animatePanel } from "./dom.js?v=e77828885b05";
+import { element, externalLink, animatePanel } from "./dom.js?v=1dc4618cbf6a";
 
 export function initProviders(document, providers) {
   const profileTabs = document.querySelector('[data-tabs="provider"]');

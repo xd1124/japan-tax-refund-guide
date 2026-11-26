@@ -31,6 +31,7 @@ test("전체 앱 초기화·라우팅·상단 로고·이전 다음·해시 복�
     "services",
     "faq",
     "checklist",
+    "stores",
   ]) {
     app.navigation.navigate(page);
     click(".logo-home");
@@ -74,14 +75,20 @@ test("전체 앱 초기화·라우팅·상단 로고·이전 다음·해시 복�
   click("#changelog-close");
   assert.equal(d.getElementById("changelog-dialog").open, false);
 });
-test("미리보기 4개·전체 80개·면세 제외와 미확인·업체 이동", () => {
+test("독립 검색 20개씩 표시·고정 미리보기·면세 상태·업체 이동", () => {
   const { document: d, input, click } = boot();
   const count = () => d.querySelectorAll("#store-results .store-item").length;
-  assert.equal(count(), 4);
-  click("#store-expand");
-  assert.equal(count(), 80);
-  click("#store-expand");
-  assert.equal(count(), 4);
+  assert.equal(d.querySelectorAll("#store-preview .store-item").length, 4);
+  assert.equal(d.querySelectorAll("#home input, #home select").length, 0);
+  click('#home [data-route="stores"]');
+  assert.equal(d.querySelector(".page.on").id, "stores");
+  assert.equal(count(), 20);
+  for (const expected of [40, 60, 80]) {
+    click("#store-more");
+    assert.equal(count(), expected);
+  }
+  assert.equal(d.getElementById("store-more").hidden, true);
+  assert.equal(d.querySelectorAll("#store-preview .store-item").length, 4);
   input("#store-query", "다이소");
   input("#store-region", "나고야", "change");
   assert.equal(count(), 6);
@@ -193,4 +200,45 @@ test("검색 데이터의 HTML·위험 URL은 실행 가능한 마크업이 되�
   assert.equal(d.querySelectorAll("#store-results img").length, 0);
   assert.equal(d.querySelector("#store-results a").getAttribute("href"), null);
   assert(d.getElementById("store-results").textContent.includes("<img"));
+});
+
+test("검색 전체 데이터 필터링·추가 지점·빈 결과·해시 복원", () => {
+  const data = { stores: [...stores, { ...stores[0], id: "new-last", ko: "새로운 마지막 지점", en: "New last branch" }] };
+  const { document: d, window: w, input, click } = boot({ hash: "#stores", data });
+  assert.equal(d.querySelector(".page.on").id, "stores");
+  assert.equal(d.querySelectorAll("#store-query").length, 1);
+  input("#store-query", "새로운 마지막 지점");
+  assert.equal(d.querySelectorAll("#store-results .store-item").length, 1);
+  assert.match(d.getElementById("store-results").textContent, /새로운 마지막 지점/);
+  input("#store-query", "zzzz없음99999");
+  assert(d.querySelector("#store-results .store-empty"));
+  assert.equal(d.getElementById("store-more").hidden, true);
+  input("#store-query", "");
+  assert.equal(d.querySelectorAll("#store-results .store-item").length, 20);
+  click('#stores [data-route="home"]');
+  assert.equal(d.querySelector(".page.on").id, "home");
+  w.location.hash = "#stores"; w.dispatch("hashchange");
+  assert.equal(d.querySelector(".page.on").id, "stores");
+  w.location.hash = ""; w.dispatch("hashchange");
+  assert.equal(d.querySelector(".page.on").id, "home");
+  click("#go-store-finder");
+  assert.equal(w.location.hash, "stores");
+  assert.equal(w.lastScroll.top, 0);
+  assert.equal(boot({ hash: "#stores" }).document.querySelector(".page.on").id, "stores");
+});
+
+test("지역 필터 후 더 보기·필터 변경 초기화와 작은 데이터 미리보기", () => {
+  const { document: d, input, click } = boot();
+  input("#store-region", "나고야", "change");
+  assert.match(d.getElementById("store-count").textContent, /^21개 검색 결과/);
+  assert.equal(d.querySelectorAll("#store-results .store-item").length, 20);
+  click("#store-more");
+  assert.equal(d.querySelectorAll("#store-results .store-item").length, 21);
+  assert.equal(d.getElementById("store-more").hidden, true);
+  input("#store-region", "", "change");
+  assert.equal(d.querySelectorAll("#store-results .store-item").length, 20);
+  for (const size of [0, 2, 5]) {
+    const { document } = boot({ data: { stores: stores.slice(0, size) } });
+    assert.equal(document.querySelectorAll("#store-preview .store-item").length, Math.min(size, 4));
+  }
 });
